@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    overflow-x: hidden;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 hover:shadow-lg shadow-teal-500/25;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-teal-600 text-teal-600 hover:bg-teal-600 hover:text-white dark:border-teal-400 dark:text-teal-400 dark:hover:bg-teal-400 dark:hover:text-slate-900 px-6 py-3 rounded-lg font-medium transition-all duration-300;
+  }
+  
+  .card {
+    @apply bg-white dark:bg-slate-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-slate-200 dark:border-slate-700;
+  }
+  
+  .skill-tag {
+    @apply bg-teal-50 dark:bg-teal-900/30 text-teal-700 dark:text-teal-300 px-3 py-1 rounded-full text-sm font-medium transition-all duration-300 hover:bg-teal-100 dark:hover:bg-teal-800/50 hover:scale-105;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-teal-600 to-emerald-600 bg-clip-text text-transparent;
+  }
+
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold font-display text-slate-800 dark:text-white mb-6;
+  }
+
+  .section-subtitle {
+    @apply text-slate-600 dark:text-slate-300 max-w-2xl mx-auto;
+  }
+}
+
+/* Prevent horizontal scroll */
+html, body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Ensure all containers don't exceed viewport width */
+.container, .container-max, .max-w-7xl {
+  max-width: 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #14b8a6;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0d9488;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #0d9488;
+}
+
+/* Smooth transitions for dark mode */
+* {
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Mobile menu animations */
+@media (max-width: 768px) {
+  .mobile-menu-container {
+    touch-action: manipulation;
+  }
+}
+
+/* Ensure images and content don't overflow */
+img, video, canvas, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for any potential overflow issues */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+/* Responsive text sizing */
+@media (max-width: 640px) {
+  .section-title {
+    @apply text-3xl;
+  }
+  
+  .text-5xl {
+    @apply text-4xl;
+  }
+  
+  .text-7xl {
+    @apply text-5xl;
+  }
+}
