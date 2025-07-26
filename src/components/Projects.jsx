@@ -1,44 +1,83 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Database, Smartphone, Monitor, FileText } from 'lucide-react';
+import { ExternalLink, Github, Monitor } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
-      title: "Food Purveyance Development System (PDDS)",
-      description: "A fully automated system for managing food commodity disbursement with comprehensive tracking and reporting capabilities.",
-      technologies: ["PHP", "Flutter", "MySQL", "HTML5", "CSS", "JavaScript"],
-      icon: <Database size={24} />,
-      type: "Full-Stack Web & Mobile Application",
-      features: ["Automated disbursement tracking", "Real-time reporting", "Mobile companion app", "Admin dashboard"],
-      gradient: "from-teal-500 to-emerald-500"
-    },
-    {
-      title: "Missing Children Web Application",
-      description: "A compassionate web application designed to help families find missing children through community collaboration and data management.",
-      technologies: ["C#", "ASP.NET", "SQL Server"],
-      icon: <ExternalLink size={24} />,
-      type: "Web Application",
-      features: ["Family registration system", "Search functionality", "Community reporting", "Data security compliance"],
-      gradient: "from-emerald-500 to-teal-500"
-    },
-    {
-      title: "Airline Ticket Reserving System",
-      description: "A comprehensive desktop application for travel agencies to efficiently manage ticket bookings and customer information.",
-      technologies: ["Java", "MySQL"],
+      title: "Herafy",
+      description: "A fullstack platform connecting craftsmen with clients through listings, advanced search, and real-time messaging.",
+      technologies: ["MongoDB", "Express.js", "Angular", "React.js", "Node.js", "JWT"],
       icon: <Monitor size={24} />,
-      type: "Desktop Application",
-      features: ["Ticket booking system", "Customer management", "Payment processing", "Inventory tracking"],
-      gradient: "from-teal-600 to-emerald-600"
+      type: "Fullstack Web Application",
+      features: ["Secure authentication", "Role-based access", "Service listings", "Real-time chat", "CI/CD & API docs"],
+      gradient: "from-teal-500 to-emerald-500",
+      demo: "https://Herafy//",
+      github: "https://github.com/osamaabukhaber/Herafy"
     },
     {
-      title: "Airline Management System SRS",
-      description: "Comprehensive Software Requirements Specification document for an airline company's management system.",
-      technologies: ["Requirements Analysis", "System Design", "Documentation"],
-      icon: <FileText size={24} />,
-      type: "System Analysis & Documentation",
-      features: ["Functional requirements", "Non-functional requirements", "Use case diagrams", "System architecture"],
-      gradient: "from-emerald-600 to-teal-600"
+      title: "Eqamaa",
+      description: "Desktop app for managing expatriate residencies, payment tracking, and report generation for a Saudi agency.",
+      technologies: ["C#", "ASP.NET", "SQL Server"],
+      icon: <Monitor size={24} />,
+      type: "Desktop Application | Not Open Source",
+      features: ["Residency tracking", "Payment alerts", "Client reports", "Office management"],
+      gradient: "from-emerald-500 to-teal-500",
+      // demo: "Not Open Source",
+      github: "https://github.com/osamaabukhaber/EqamaaApp"
+    },
+    // {
+    //   title: "My Portfolio",
+    //   description: "Personal portfolio website showcasing my professional profile, featured projects, and contact info.",
+    //   technologies: ["React", "Tailwind CSS", "React Router DOM"],
+    //   icon: <ExternalLink size={24} />,
+    //   type: "Frontend Web Application",
+    //   features: ["Project showcase", "Responsive design", "Contact form", "Deployed on Netlify"],
+    //   gradient: "from-teal-600 to-emerald-600"
+    // },
+    {
+      title: "Food Purveyance Development System",
+      description: "Automated system for managing disbursement of food commodities, used to solve a real-world societal issue.",
+      technologies: ["PHP", "Flutter", "MySQL", "HTML5", "CSS3", "JavaScript"],
+      icon: <Monitor size={24} />,
+      type: "Fullstack Web & Mobile Application",
+      features: ["Automated disbursement", "Mobile companion app", "Admin dashboard", "Reporting tools"],
+      gradient: "from-emerald-600 to-teal-600",
+      demo: "https://movies4u.vercel.app",
+      github: "https://github.com/your-username/movies4u"
+    },
+    {
+      title: "Movies4U",
+      description: "Responsive movie browsing web app using TMDB API with trending, popular, and top-rated movies.",
+      technologies: ["ReactJS", "TMDB API", "Tailwind CSS", "Axios"],
+      icon: <Monitor size={24} />,
+      type: "Frontend Web Application",
+      features: ["API integration", "Movie details", "Responsive UI", "Deployed on Vercel"],
+      gradient: "from-teal-500 to-emerald-500",
+      demo: "https://movies4u.vercel.app",
+      github: "https://github.com/your-username/movies4u"
+    },
+    {
+      title: "NextLearn",
+      description: "Interactive eLearning platform with video lessons, progress tracking, and quizzes.",
+      technologies: ["JavaScript", "HTML5", "CSS3"],
+      icon: <Monitor size={24} />,
+      type: "Educational Web App",
+      features: ["Video lessons", "Progress tracking", "Quizzes", "Deployed on Netlify"],
+      gradient: "from-emerald-500 to-teal-500",
+      demo: "https://next-learn-iti.vercel.app",
+      github: "https://github.com/osamaabukhaber/NextLearn"
+    },
+    {
+      title: "CRUD JS App",
+      description: "Simple CRUD web app for managing data in local storage.",
+      technologies: ["JavaScript", "HTML5", "CSS3"],
+      icon: <Monitor size={24} />,
+      type: "Mini Project",
+      features: ["Create, Read, Update, Delete", "LocalStorage", "Lightweight UI"],
+      gradient: "from-teal-600 to-emerald-600",
+      demo: "https://crud-web-app-js.netlify.app/",
+      github: "https://github.com/osamaabukhaber/CRUD-JS"
     }
   ];
 
@@ -111,25 +150,38 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
+<div className="flex gap-3">
+  {project.demo && (
+    <motion.a
+      href={project.demo}
+      target="_blank"
+      // rel="noopener noreferrer"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-600 to-teal-500 text-white rounded-lg hover:from-teal-700 hover:to-teal-600 transition-all duration-300 text-sm font-medium"
+    >
+      <ExternalLink size={16} />
+      View Demo
+    </motion.a>
+  )}
 
-              <div className="flex gap-3">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-teal-600 to-teal-500 text-white rounded-lg hover:from-teal-700 hover:to-teal-600 transition-all duration-300 text-sm font-medium"
-                >
-                  <ExternalLink size={16} />
-                  View Details
-                </motion.button>
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-4 py-2 border border-teal-600 text-teal-600 dark:text-teal-400 dark:border-teal-400 rounded-lg hover:bg-teal-600 hover:text-white dark:hover:bg-teal-400 dark:hover:text-slate-900 transition-all duration-300 text-sm font-medium"
-                >
-                  <Github size={16} />
-                  Source
-                </motion.button>
-              </div>
+  {project.github && (
+    <motion.a
+      href={project.github}
+      target="_blank"
+      rel="noopener noreferrer"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="flex items-center gap-2 px-4 py-2 border border-teal-600 text-teal-600 dark:text-teal-400 dark:border-teal-400 rounded-lg hover:bg-teal-600 hover:text-white dark:hover:bg-teal-400 dark:hover:text-slate-900 transition-all duration-300 text-sm font-medium"
+    >
+      <Github size={16} />
+      Github
+    </motion.a>
+  )}
+</div>
+
+
+
             </motion.div>
           ))}
         </div>
